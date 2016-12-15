@@ -1,0 +1,47 @@
+img{
+	max-width: 100%;
+	width: 250px;
+	height: 180px;
+}
+
+/* set up the parent as a 3d playgroundn with perspective */
+.mg-tile{
+	height: 180px;
+	min-width: 250px;
+	/* border: 2px solid black; */
+	perspective: 500px; 
+	padding: 0;
+	/* 500px depth */
+	margin: 18px 0;
+}
+
+.mg-tile-inner{
+	width: 250px;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: all .8s;
+}
+
+.mg-front, .mg-back{
+	position: absolute;
+	top: 0;
+	left: 0; 
+	border: 2px solid red;
+	backface-visibility: hidden
+}
+
+
+/* flip the front of the card face down */
+.mg-front{
+	transform: rotateY(540deg);
+}
+
+.mg-back{
+	background: url('image2.png') no-repeat 50% 50%; 
+	width: 250px;
+	height: 180px;
+}
+
+.flip, .matched{
+	transform: rotateY(-540deg)
+}
